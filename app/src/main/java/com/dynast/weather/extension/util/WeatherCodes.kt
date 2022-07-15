@@ -65,7 +65,7 @@ sealed class WeatherCodes(
                 61 -> Rain
                 63 -> ModerateRain
                 65 -> HeavyRain
-                66 -> FreezingDrizzle
+                66 -> FreezingRain
                 67 -> HeavyFreezingRain
                 71 -> SnowFall
                 73 -> ModerateSnowFall
