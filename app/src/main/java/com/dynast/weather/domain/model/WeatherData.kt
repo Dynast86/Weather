@@ -43,7 +43,7 @@ data class WeatherData(
     val humidity: Double = 0.0,
 )
 
-private data class IndexedWeatherData(
+data class IndexedWeatherData(
     val index: Int,
     val data: WeatherData
 )
@@ -76,7 +76,7 @@ fun Hourly.toWeatherDataMap(): Map<Int, List<WeatherData>> {
         )
     }.groupBy {
         it.index / 24
-    }.mapValues {
-        it.value.map { it.data }
+    }.mapValues { item ->
+        item.value.map { it.data }
     }
 }

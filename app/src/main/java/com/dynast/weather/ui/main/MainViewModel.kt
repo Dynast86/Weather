@@ -14,9 +14,6 @@ import javax.inject.Inject
 class MainViewModel @Inject constructor(
     private val getWeatherUseCase: GetWeatherUseCase
 ) : ViewModel() {
-    companion object {
-        val TAG: String = MainViewModel::class.java.simpleName
-    }
 
     private val _weather = MutableStateFlow(WeatherState())
     val weather: StateFlow<WeatherState> get() = _weather

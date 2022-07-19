@@ -3,7 +3,6 @@ package com.dynast.weather.domain.useCase.weather
 import android.location.Location
 import com.dynast.weather.data.remote.repository.WeatherRepository
 import com.dynast.weather.domain.location.LocationTracker
-import com.dynast.weather.domain.model.WeatherData
 import com.dynast.weather.domain.model.WeatherInfo
 import com.dynast.weather.extension.di.IoDispatcher
 import com.dynast.weather.extension.util.Resource

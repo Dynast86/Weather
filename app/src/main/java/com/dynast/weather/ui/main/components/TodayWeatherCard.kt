@@ -1,4 +1,4 @@
-package com.dynast.weather.ui.main
+package com.dynast.weather.ui.main.components
 
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -20,6 +20,7 @@ import com.airbnb.lottie.compose.rememberLottieComposition
 import com.dynast.weather.domain.model.WeatherData
 import com.dynast.weather.domain.model.WeatherInfo
 import com.dynast.weather.extension.util.WeatherCodes
+import com.dynast.weather.ui.main.WeatherState
 import com.dynast.weather.ui.theme.WeatherTheme
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
@@ -46,7 +47,7 @@ fun TodayWeatherCard(
                 val composition by rememberLottieComposition(spec = LottieCompositionSpec.RawRes(weatherCode.day))
 
                 Column(modifier = modifier.fillMaxWidth()) {
-                    Text(text = time.format(DateTimeFormatter.ofPattern("yyyy년 MM월 dd일 hh시mm분")))
+                    Text(text = time.format(DateTimeFormatter.ofPattern("MM월 dd일 a hh시")))
                     Row(
                         modifier = modifier.fillMaxWidth(),
                         horizontalArrangement = Arrangement.SpaceBetween,
@@ -69,7 +70,8 @@ fun TodayWeatherCard(
                     }
                 }
             } ?: run {
-                Text(text = "Now Loading...")
+                if (state.isLoading) Text(text = "Now Loading...")
+                state.error?.apply { Text(text = this) }
             }
         }
     }

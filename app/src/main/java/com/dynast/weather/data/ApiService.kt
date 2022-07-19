@@ -6,11 +6,10 @@ import retrofit2.http.Query
 
 interface ApiService {
     companion object {
-        val TAG: String = ApiService::class.java.simpleName
         const val ApiEndPoint: String = "v1/forecast"
     }
 
-    @GET("$ApiEndPoint?&current_weather=true&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,windspeed_10m,winddirection_10m&timezone=Asia%2FSeoul")
+    @GET("$ApiEndPoint?current_weather=true&hourly=temperature_2m,relativehumidity_2m,apparent_temperature,weathercode,windspeed_10m,winddirection_10m&timezone=Asia%2FSeoul")
     suspend fun getWeatherData(
         @Query("latitude") latitude: Double,
         @Query("longitude") occupation: Double,
