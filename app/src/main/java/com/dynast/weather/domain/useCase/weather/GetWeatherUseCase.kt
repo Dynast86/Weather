@@ -4,6 +4,7 @@ import android.location.Location
 import com.dynast.weather.data.remote.repository.WeatherRepository
 import com.dynast.weather.domain.location.LocationTracker
 import com.dynast.weather.domain.model.WeatherData
+import com.dynast.weather.domain.model.WeatherInfo
 import com.dynast.weather.extension.di.IoDispatcher
 import com.dynast.weather.extension.util.Resource
 import com.dynast.weather.ui.main.LocationState
@@ -18,7 +19,7 @@ class GetWeatherUseCase @Inject constructor(
     @IoDispatcher val coroutineDispatcher: CoroutineDispatcher
 ) {
 
-    suspend operator fun invoke(): Resource<WeatherData> {
+    suspend operator fun invoke(): Resource<WeatherInfo> {
         return try {
             withContext(context = coroutineDispatcher) {
                 val location: Location? = locationTracker.getCurrentLocation()
