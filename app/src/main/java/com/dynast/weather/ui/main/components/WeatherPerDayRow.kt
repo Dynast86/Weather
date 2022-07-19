@@ -1,12 +1,14 @@
 package com.dynast.weather.ui.main.components
 
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.lazy.items
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import com.dynast.weather.domain.model.WeatherInfo
 import com.dynast.weather.ui.main.WeatherState
 import com.dynast.weather.ui.main.components.preview.PreviewData
@@ -19,7 +21,8 @@ fun WeatherPerDayRow(
 ) {
     LazyRow(
         modifier = modifier
-            .fillMaxWidth(),
+            .fillMaxWidth()
+            .padding(bottom = 16.dp),
         verticalAlignment = Alignment.Bottom
     ) {
         state.info?.weekWeatherData?.get(0)?.let {
