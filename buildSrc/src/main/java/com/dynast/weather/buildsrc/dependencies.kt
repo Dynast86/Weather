@@ -52,9 +52,9 @@ object Libs {
 
         const val coreKtx = "androidx.core:core-ktx:1.8.0"
 
-        object PlayService {
+        object PlayServices {
             private const val version = "20.0.0"
-            const val location = "com.google.android.gms:play-services-location:$version"
+            const val playServiceLocation = "com.google.android.gms:play-services-location:$version"
         }
 
         object Activity {
@@ -87,7 +87,7 @@ object Libs {
         }
 
         object Compose {
-            private const val version = "1.2.0-rc02"
+            const val version = "1.2.0-rc02"
 
             const val material = "androidx.compose.material:material:1.1.1"
             const val materialIconExtended = "androidx.compose.material:material-icons-extended:$version"

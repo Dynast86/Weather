@@ -1,15 +1,14 @@
 import com.dynast.weather.buildsrc.Libs
 
 plugins {
-    id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
-//    id 'kotlin-extension'
-    id 'dagger.hilt.android.plugin'
+    id "com.android.application"
+    id "org.jetbrains.kotlin.android"
+    id "kotlin-kapt"
+    id "dagger.hilt.android.plugin"
 }
 
 android {
-    compileSdk 32
+    compileSdkVersion(32)
 
     defaultConfig {
         applicationId "com.dynast.weather"
@@ -27,7 +26,7 @@ android {
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            proguardFiles getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
         }
     }
     compileOptions {
@@ -35,7 +34,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     kotlinOptions {
-        jvmTarget = '1.8'
+        jvmTarget = "1.8"
     }
     buildFeatures {
         compose true
@@ -45,7 +44,7 @@ android {
     }
     packagingOptions {
         resources {
-            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
         }
     }
     kotlin.sourceSets.all {
@@ -55,62 +54,62 @@ android {
 
 dependencies {
 
-    implementation Libs.AndroidX.coreKtx
+    implementation(Libs.AndroidX.coreKtx)
 
-    implementation Libs.AndroidX.Compose.Ui.ui
-    implementation Libs.AndroidX.Compose.Ui.uiToolingPreview
-    debugImplementation Libs.AndroidX.Compose.Ui.uiTooling
-    debugImplementation Libs.AndroidX.Compose.Ui.uiTestManifest
-    androidTestImplementation Libs.AndroidX.Compose.Ui.uiTestJUnit
+    implementation(Libs.AndroidX.Compose.Ui.ui)
+    implementation(Libs.AndroidX.Compose.Ui.uiToolingPreview)
+    debugImplementation(Libs.AndroidX.Compose.Ui.uiTooling)
+    debugImplementation(Libs.AndroidX.Compose.Ui.uiTestManifest)
+    androidTestImplementation(Libs.AndroidX.Compose.Ui.uiTestJUnit)
 
-    implementation Libs.AndroidX.Lifecycle.runtime
-    implementation Libs.AndroidX.Activity.activityCompose
-    implementation Libs.AndroidX.PlayService.location
-    testImplementation Libs.JUnit.junit
-    androidTestImplementation Libs.AndroidX.Test.Ext.junit
-    androidTestImplementation Libs.AndroidX.Test.espressoCore
+    implementation(Libs.AndroidX.Lifecycle.runtime)
+    implementation(Libs.AndroidX.Activity.activityCompose)
+    implementation(Libs.AndroidX.PlayServices.playServiceLocation)
+    testImplementation(Libs.JUnit.junit)
+    androidTestImplementation(Libs.AndroidX.Test.Ext.junit)
+    androidTestImplementation(Libs.AndroidX.Test.espressoCore)
 
     // 머티리얼 테마
-    implementation Libs.AndroidX.Compose.material
-    implementation Libs.AndroidX.Compose.material3
+    implementation(Libs.AndroidX.Compose.material)
+    implementation(Libs.AndroidX.Compose.material3)
     // 대용량 아이콘
-    implementation Libs.AndroidX.Compose.materialIconExtended
+    implementation(Libs.AndroidX.Compose.materialIconExtended)
     // 네비게이션
-    implementation Libs.AndroidX.Navigation.navigation
+    implementation(Libs.AndroidX.Navigation.navigation)
 
     // Hilt
-    kapt Libs.Hilt.compiler
-    kapt Libs.AndroidX.Hilt.compiler
-    implementation Libs.AndroidX.Hilt.common
-    implementation Libs.AndroidX.Hilt.navigationCompose
-    implementation Libs.Hilt.android
+    kapt(Libs.Hilt.compiler)
+    kapt(Libs.AndroidX.Hilt.compiler)
+    implementation(Libs.AndroidX.Hilt.common)
+    implementation(Libs.AndroidX.Hilt.navigationCompose)
+    implementation(Libs.Hilt.android)
 
     // Coil
-    implementation Libs.Coil.coilCompose
+    implementation(Libs.Coil.coilCompose)
 
     // DataStore
-    implementation Libs.DataStore.datastore
+    implementation(Libs.DataStore.datastore)
 
     // Retrofit2
-    implementation Libs.Retrofit.retrofit
-    implementation Libs.Retrofit.converter
-    implementation Libs.OkHttp.okhttp
-    implementation Libs.OkHttp.logging
-    implementation Libs.gson
+    implementation(Libs.Retrofit.retrofit)
+    implementation(Libs.Retrofit.converter)
+    implementation(Libs.OkHttp.okhttp)
+    implementation(Libs.OkHttp.logging)
+    implementation(Libs.gson)
 
     // Room
-    implementation Libs.AndroidX.Room.runtime
-    annotationProcessor Libs.AndroidX.Room.compiler
-    kapt Libs.AndroidX.Room.compiler
-    implementation Libs.AndroidX.Room.ktx
+    implementation(Libs.AndroidX.Room.runtime)
+    annotationProcessor(Libs.AndroidX.Room.compiler)
+    kapt(Libs.AndroidX.Room.compiler)
+    implementation(Libs.AndroidX.Room.ktx)
 
     // Paging
-    implementation Libs.AndroidX.Paging.pagingCompose
+    implementation(Libs.AndroidX.Paging.pagingCompose)
 
     // Window
-    implementation Libs.AndroidX.Window.window
+    implementation(Libs.AndroidX.Window.window)
 
     // Lottie
-    implementation Libs.Lottie.lottie
-    implementation Libs.Lottie.lottieCompose
+    implementation(Libs.Lottie.lottie)
+    implementation(Libs.Lottie.lottieCompose)
 }
