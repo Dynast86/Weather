@@ -1,12 +1,8 @@
+import com.dynast.weather.buildsrc.Libs
+
 buildscript {
-    ext {
-        compose_version = '1.2.0-rc02'
-        hiltVersion = '2.42'
-        roomVersion = '2.4.2'
-        materialVersion = '1.0.0-alpha13'
-    }
     dependencies {
-        classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+        classpath Libs.Hilt.gradlePlugin
     }
 }// Top-level build file where you can add configuration options common to all sub-projects/modules.
 plugins {

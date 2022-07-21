@@ -1,3 +1,5 @@
+import com.dynast.weather.buildsrc.Libs
+
 plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
@@ -39,7 +41,7 @@ android {
         compose true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion compose_version
+        kotlinCompilerExtensionVersion Libs.AndroidX.Compose.version
     }
     packagingOptions {
         resources {
@@ -53,60 +55,62 @@ android {
 
 dependencies {
 
-    implementation 'androidx.core:core-ktx:1.8.0'
-    implementation "androidx.compose.ui:ui:$compose_version"
-    implementation 'androidx.compose.material3:material3:1.0.0-alpha14'
-    implementation "androidx.compose.ui:ui-tooling-preview:$compose_version"
-    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.5.0'
-    implementation 'androidx.activity:activity-compose:1.5.0'
-    implementation 'com.google.android.gms:play-services-location:20.0.0'
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
-    androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
-    debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+    implementation Libs.AndroidX.coreKtx
 
+    implementation Libs.AndroidX.Compose.Ui.ui
+    implementation Libs.AndroidX.Compose.Ui.uiToolingPreview
+    debugImplementation Libs.AndroidX.Compose.Ui.uiTooling
+    debugImplementation Libs.AndroidX.Compose.Ui.uiTestManifest
+    androidTestImplementation Libs.AndroidX.Compose.Ui.uiTestJUnit
+
+    implementation Libs.AndroidX.Lifecycle.runtime
+    implementation Libs.AndroidX.Activity.activityCompose
+    implementation Libs.AndroidX.PlayService.location
+    testImplementation Libs.JUnit.junit
+    androidTestImplementation Libs.AndroidX.Test.Ext.junit
+    androidTestImplementation Libs.AndroidX.Test.espressoCore
+
+    // 머티리얼 테마
+    implementation Libs.AndroidX.Compose.material
+    implementation Libs.AndroidX.Compose.material3
     // 대용량 아이콘
-    implementation "androidx.compose.material:material-icons-extended:$compose_version"
-
-    implementation 'androidx.compose.material:material:1.1.1'
-    implementation 'androidx.navigation:navigation-compose:2.5.0'
+    implementation Libs.AndroidX.Compose.materialIconExtended
+    // 네비게이션
+    implementation Libs.AndroidX.Navigation.navigation
 
     // Hilt
-    implementation "androidx.hilt:hilt-navigation-compose:1.0.0"
-    implementation "com.google.dagger:hilt-android:$hiltVersion"
-    kapt "com.google.dagger:hilt-android-compiler:$hiltVersion"
-    kapt 'androidx.hilt:hilt-compiler:1.0.0'
-    implementation "androidx.hilt:hilt-common:1.0.0"
+    kapt Libs.Hilt.compiler
+    kapt Libs.AndroidX.Hilt.compiler
+    implementation Libs.AndroidX.Hilt.common
+    implementation Libs.AndroidX.Hilt.navigationCompose
+    implementation Libs.Hilt.android
+
     // Coil
-    implementation 'io.coil-kt:coil-compose:2.1.0'
+    implementation Libs.Coil.coilCompose
 
     // DataStore
-    implementation "androidx.datastore:datastore-preferences:1.0.0"
+    implementation Libs.DataStore.datastore
 
     // Retrofit2
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:5.0.0-alpha.3'
-    implementation 'com.squareup.okhttp3:logging-interceptor:5.0.0-alpha.3'
-    implementation 'com.google.code.gson:gson:2.8.9'
+    implementation Libs.Retrofit.retrofit
+    implementation Libs.Retrofit.converter
+    implementation Libs.OkHttp.okhttp
+    implementation Libs.OkHttp.logging
+    implementation Libs.gson
 
     // Room
-    implementation("androidx.room:room-runtime:$roomVersion")
-    annotationProcessor("androidx.room:room-compiler:$roomVersion")
-    // To use Kotlin annotation processing tool (kapt)
-    kapt("androidx.room:room-compiler:$roomVersion")
-    // optional - Kotlin Extensions and Coroutines support for Room
-    implementation("androidx.room:room-ktx:$roomVersion")
+    implementation Libs.AndroidX.Room.runtime
+    annotationProcessor Libs.AndroidX.Room.compiler
+    kapt Libs.AndroidX.Room.compiler
+    implementation Libs.AndroidX.Room.ktx
 
     // Paging
-    implementation "androidx.paging:paging-compose:1.0.0-alpha15"
+    implementation Libs.AndroidX.Paging.pagingCompose
 
     // Window
-    implementation "androidx.window:window:1.0.0"
+    implementation Libs.AndroidX.Window.window
 
     // Lottie
-    implementation 'com.airbnb.android:lottie:5.0.3'
-    implementation 'com.airbnb.android:lottie-compose:5.0.3'
+    implementation Libs.Lottie.lottie
+    implementation Libs.Lottie.lottieCompose
 }
