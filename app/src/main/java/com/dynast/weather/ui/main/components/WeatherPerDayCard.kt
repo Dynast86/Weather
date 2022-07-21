@@ -44,7 +44,7 @@ fun WeatherPerDayCard(
                 composition = composition, iterations = LottieConstants.IterateForever,
                 contentScale = ContentScale.FillWidth
             )
-            Text(text = item.time.format(DateTimeFormatter.ofPattern("a HH시")), fontSize = 12.sp)
+            Text(text = item.time.format(DateTimeFormatter.ofPattern("a hh시")), fontSize = 12.sp)
         }
     }
 }

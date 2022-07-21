@@ -42,7 +42,7 @@ fun WindCard(
                 text = "${item.windSpeed.toInt()}km/h", fontSize = 12.sp,
                 modifier = Modifier.padding(bottom = 4.dp)
             )
-            Text(text = item.time.format(DateTimeFormatter.ofPattern("a HH시")), fontSize = 12.sp)
+            Text(text = item.time.format(DateTimeFormatter.ofPattern("a hh시")), fontSize = 12.sp)
         }
     }
 }
