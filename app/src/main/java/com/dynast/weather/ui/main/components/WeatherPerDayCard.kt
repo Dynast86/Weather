@@ -17,7 +17,7 @@ import com.airbnb.lottie.compose.LottieAnimation
 import com.airbnb.lottie.compose.LottieCompositionSpec
 import com.airbnb.lottie.compose.LottieConstants
 import com.airbnb.lottie.compose.rememberLottieComposition
-import com.dynast.weather.domain.model.WeatherData
+import com.dynast.weather.domain.model.weather.WeatherData
 import com.dynast.weather.extension.util.WeatherCodes
 import com.dynast.weather.ui.theme.WeatherTheme
 import java.time.LocalDateTime

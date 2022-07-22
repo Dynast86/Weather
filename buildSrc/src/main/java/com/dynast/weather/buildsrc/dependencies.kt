@@ -55,6 +55,7 @@ object Libs {
         object PlayServices {
             private const val version = "20.0.0"
             const val playServiceLocation = "com.google.android.gms:play-services-location:$version"
+            const val playServiceAuth = "com.google.android.gms:play-services-auth:$version"
         }
 
         object Activity {

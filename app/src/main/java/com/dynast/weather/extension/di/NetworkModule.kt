@@ -1,6 +1,7 @@
 package com.dynast.weather.extension.di
 
-import com.dynast.weather.data.ApiService
+import com.dynast.weather.data.api.WeatherApiService
+import com.dynast.weather.data.api.YoutubeApiService
 import com.google.gson.GsonBuilder
 import dagger.Module
 import dagger.Provides
@@ -21,7 +22,8 @@ object NetworkModule {
     private const val WriteTimeOut = 1L
     private const val ReadTimeOut = 20L
 
-    private const val url = "https://api.open-meteo.com/"
+    private const val weatherUrl = "https://api.open-meteo.com/"
+    private const val youtubeUrl = "https://www.googleapis.com/youtube/"
 
     @Provides
     @Singleton
@@ -39,18 +41,23 @@ object NetworkModule {
 
     @Provides
     @Singleton
-    fun provideRetrofit(okHttpClient: OkHttpClient): Retrofit {
+    fun provideWeatherApiService(okHttpClient: OkHttpClient): WeatherApiService {
         val gson = GsonBuilder().serializeNulls().setLenient().create()
         return Retrofit.Builder()
             .client(okHttpClient)
-            .baseUrl(url)
+            .baseUrl(weatherUrl)
             .addConverterFactory(GsonConverterFactory.create(gson))
-            .build()
+            .build().create(WeatherApiService::class.java)
     }
 
     @Provides
     @Singleton
-    fun provideApiService(retrofit: Retrofit): ApiService {
-        return retrofit.create(ApiService::class.java)
+    fun provideYoutubeApiService(okHttpClient: OkHttpClient): YoutubeApiService {
+        val gson = GsonBuilder().serializeNulls().setLenient().create()
+        return Retrofit.Builder()
+            .client(okHttpClient)
+            .baseUrl(youtubeUrl)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build().create(YoutubeApiService::class.java)
     }
 }

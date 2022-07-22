@@ -1,6 +1,6 @@
 package com.dynast.weather.ui.main
 
-import com.dynast.weather.domain.model.WeatherInfo
+import com.dynast.weather.domain.model.weather.WeatherInfo
 
 data class WeatherState(
     val info: WeatherInfo? = null,

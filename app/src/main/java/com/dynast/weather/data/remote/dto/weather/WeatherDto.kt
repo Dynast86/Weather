@@ -1,4 +1,4 @@
-package com.dynast.weather.data.remote.dto
+package com.dynast.weather.data.remote.dto.weather
 
 import com.google.gson.annotations.SerializedName
 

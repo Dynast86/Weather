@@ -1,10 +1,10 @@
-package com.dynast.weather.data
+package com.dynast.weather.data.api
 
-import com.dynast.weather.data.remote.dto.WeatherDto
+import com.dynast.weather.data.remote.dto.weather.WeatherDto
 import retrofit2.http.GET
 import retrofit2.http.Query
 
-interface ApiService {
+interface WeatherApiService {
     companion object {
         const val ApiEndPoint: String = "v1/forecast"
     }

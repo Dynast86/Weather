@@ -34,7 +34,10 @@ fun MainScreen(
                     .fillMaxWidth()
                     .height(192.dp)
                     .clickable {
-                        if (!state.value.isLoading) scope.launch { viewModel.getWeatherData() }
+                        if (!state.value.isLoading) scope.launch {
+                            viewModel.getWeatherData()
+                            viewModel.getYoutubeData()
+                        }
                     },
                 shape = RoundedCornerShape(8.dp),
             ) {

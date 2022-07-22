@@ -14,7 +14,7 @@ import androidx.compose.ui.draw.rotate
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dynast.weather.domain.model.WeatherData
+import com.dynast.weather.domain.model.weather.WeatherData
 import com.dynast.weather.extension.util.WeatherCodes
 import com.dynast.weather.ui.theme.WeatherTheme
 import java.time.LocalDateTime

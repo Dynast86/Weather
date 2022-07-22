@@ -1,8 +1,8 @@
 package com.dynast.weather.ui.main.components.preview
 
-import com.dynast.weather.data.remote.dto.Hourly
-import com.dynast.weather.domain.model.IndexedWeatherData
-import com.dynast.weather.domain.model.WeatherData
+import com.dynast.weather.data.remote.dto.weather.Hourly
+import com.dynast.weather.domain.model.weather.IndexedWeatherData
+import com.dynast.weather.domain.model.weather.WeatherData
 import com.dynast.weather.extension.util.WeatherCodes
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter

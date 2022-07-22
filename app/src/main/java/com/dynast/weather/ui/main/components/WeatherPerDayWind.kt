@@ -20,8 +20,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.dynast.weather.domain.model.WeatherData
-import com.dynast.weather.domain.model.WeatherInfo
+import com.dynast.weather.domain.model.weather.WeatherData
+import com.dynast.weather.domain.model.weather.WeatherInfo
 import com.dynast.weather.extension.util.WeatherCodes
 import com.dynast.weather.ui.main.WeatherState
 import com.dynast.weather.ui.main.components.preview.PreviewData

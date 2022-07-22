@@ -1,7 +1,7 @@
-package com.dynast.weather.domain.model
+package com.dynast.weather.domain.model.weather
 
-import com.dynast.weather.data.remote.dto.Hourly
-import com.dynast.weather.data.remote.dto.WeatherDto
+import com.dynast.weather.data.remote.dto.weather.Hourly
+import com.dynast.weather.data.remote.dto.weather.WeatherDto
 import com.dynast.weather.extension.util.WeatherCodes
 import com.dynast.weather.extension.util.WindDirections
 import java.time.LocalDateTime

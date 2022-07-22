@@ -1,8 +1,8 @@
 package com.dynast.weather.data.remote.repository
 
 import com.dynast.weather.data.remote.dataSource.RemoteWeatherDataSource
-import com.dynast.weather.domain.model.WeatherInfo
-import com.dynast.weather.domain.model.toWeatherData
+import com.dynast.weather.domain.model.weather.WeatherInfo
+import com.dynast.weather.domain.model.weather.toWeatherData
 import com.dynast.weather.ui.main.LocationState
 import javax.inject.Inject
 
