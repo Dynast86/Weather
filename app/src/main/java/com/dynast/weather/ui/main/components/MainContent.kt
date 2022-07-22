@@ -2,6 +2,7 @@ package com.dynast.weather.ui.main.components
 
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -28,23 +29,26 @@ fun MainScreen(
             .fillMaxSize()
             .padding(16.dp)
     ) {
-        Column {
-            Card(
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(192.dp)
-                    .clickable {
-                        if (!state.value.isLoading) scope.launch {
-                            viewModel.getWeatherData()
-                            viewModel.getYoutubeData()
-                        }
-                    },
-                shape = RoundedCornerShape(8.dp),
-            ) {
-                TodayWeatherCard(state = state.value)
+        LazyColumn {
+            item {
+                Card(
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .height(192.dp)
+                        .clickable {
+                            if (!state.value.isLoading) scope.launch {
+                                viewModel.getWeatherData()
+                                viewModel.getYoutubeData()
+                            }
+                        },
+                    shape = RoundedCornerShape(8.dp),
+                ) {
+                    TodayWeatherCard(state = state.value)
+                }
             }
-            WeatherPerDayRow(state = state.value)
-            WeatherPerDayWind(state = state.value)
+
+            item { WeatherPerDayRow(state = state.value) }
+            item { WeatherPerDayWind(state = state.value) }
         }
     }
 }

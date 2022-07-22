@@ -1,5 +1,6 @@
 package com.dynast.weather.ui.main
 
+import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dynast.weather.domain.useCase.weather.GetWeatherUseCase
@@ -14,7 +15,8 @@ import javax.inject.Inject
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val getWeatherUseCase: GetWeatherUseCase,
-    private val getYoutubeUseCase: GetYoutubeUseCase
+    private val getYoutubeUseCase: GetYoutubeUseCase,
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     private val _weather = MutableStateFlow(WeatherState())
